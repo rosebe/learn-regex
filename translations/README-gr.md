@@ -31,8 +31,11 @@
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
 * [فارسی](../translations/README-fa.md)
+* [עברית](translations/README-he.md)
 
 ## Τι είναι μια Κανονική Έκφραση (Regular Expression);
+
+[![](https://img.shields.io/badge/-Download%20PDF%20-0a0a0a.svg?style=flat&colorA=0a0a0a)](https://gum.co/learn-regex)
 
 > Μια κανονική έκφραση είναι μια ομάδα χαρακτήρων ή συμβόλων που χρησιμοποιούνται για την εύρεση ενός συγκεκριμένου μοτίβου χαρακτήρων μέσα σ'ένα κείμενο.
 

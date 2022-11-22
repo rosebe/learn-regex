@@ -30,8 +30,11 @@
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
 * [فارسی](../translations/README-fa.md)
+* [עברית](translations/README-he.md)
 
 ## 什么是正则表达式?
+
+[![](https://img.shields.io/badge/-Download%20PDF%20-0a0a0a.svg?style=flat&colorA=0a0a0a)](https://gum.co/learn-regex)
  
 > 正则表达式是一组由字母和符号组成的特殊文本, 它可以用来从文本中找出满足你想要的格式的句子.
 
@@ -298,7 +301,7 @@
 
 `^` 用来检查匹配的字符串是否在所匹配字符串的开头.
 
-例如, 在 `abc` 中使用表达式 `^a` 会得到结果 `a`. 但如果使用 `^b` 将匹配不到任何结果. 应为在字符串 `abc` 中并不是以 `b` 开头.
+例如, 在 `abc` 中使用表达式 `^a` 会得到结果 `a`. 但如果使用 `^b` 将匹配不到任何结果. 因为在字符串 `abc` 中并不是以 `b` 开头.
 
 例如, `^(T|t)he` 匹配以 `The` 或 `the` 开头的字符串.
 

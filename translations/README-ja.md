@@ -31,8 +31,11 @@
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
 * [فارسی](../translations/README-fa.md)
+* [עברית](translations/README-he.md)
 
 ## 正規表現とは
+
+[![](https://img.shields.io/badge/-Download%20PDF%20-0a0a0a.svg?style=flat&colorA=0a0a0a)](https://gum.co/learn-regex)
 
 > 正規表現とは文中からある文字列のパターンを見つけるために使用される文字列や記号の組み合わせのことです。
 

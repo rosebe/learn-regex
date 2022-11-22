@@ -31,8 +31,11 @@
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
 * [فارسی](../translations/README-fa.md)
+* [עברית](translations/README-he.md)
 
 ## Düzenli İfade Nedir?
+
+[![](https://img.shields.io/badge/-Download%20PDF%20-0a0a0a.svg?style=flat&colorA=0a0a0a)](https://gum.co/learn-regex)
 
 > Düzenli ifade, bir metinden belirli bir deseni bulmak için kullanılan bir karakter veya sembol grubudur.
 
@@ -63,19 +66,20 @@ Yukardaki düzenli ifade `john_doe`, `jo-hn_doe` ve `john12_as` gibi girişleri 
 - [Temel Eşleştiriciler](#1-temel-eşleştiriciler)
 - [Meta Karakterler](#2-meta-karakterler)
   - [Nokta](#21-nokta)
-  - [Karakter takımı](#22-karakter-takımı)
-    - [Negatiflenmiş karakter seti](#221-negatiflenmiş-karakter-seti)
+  - [Karakter Takımı](#22-karakter-takımı)
+    - [Negatiflenmiş Karakter Seti](#221-negatiflenmiş-karakter-seti)
   - [Tekrarlar](#23-tekrarlar)
     - [Yıldız İşareti](#231-yıldız-İşareti)
     - [Artı İşareti](#232-artı-İşareti)
     - [Soru İşareti](#233-soru-İşareti)
   - [Süslü Parantez](#24-süslü-parantez)
   - [Karakter Grubu](#25-karakter-grubu)
+      - [Karakter Grubu Olmayanlar](#251-karakter-grubu-olmayanlar)
   - [Değişim](#26-değişim)
   - [Özel Karakter Hariç Tutma](#27-Özel-karakter-hariç-tutma)
   - [Sabitleyiciler](#28-sabitleyiciler)
-    - [Ters v işareti](#281-Şapka-İşareti)
-    - [Dolar işareti](#282-dolar-İşareti)
+    - [Şapka İşareti](#281-Şapka-İşareti)
+    - [Dolar İşareti](#282-dolar-İşareti)
 - [Kısaltma Karakter Takımları](#3-kısaltma-karakter-takımları)
 - [Bakınmak](#4-bakınmak)
   - [Olumlu Bakınma](#41-positive-lookahead)
@@ -83,9 +87,10 @@ Yukardaki düzenli ifade `john_doe`, `jo-hn_doe` ve `john12_as` gibi girişleri 
   - [Positive Lookbehind](#43-positive-lookbehind)
   - [Negative Lookbehind](#44-negative-lookbehind)
 - [İşaretler](#5-İşaretler)
-  - [Büyük/Küçük harf duyarlılığı](#51-büyükküçük-harf-duyarlılığı)
+  - [Büyük/Küçük Harf Duyarlılığı](#51-büyükküçük-harf-duyarlılığı)
   - [Bütünsel Arama](#52-genel-arama)
-  - [Çok satırlı](#53-Çok-satırlı)
+  - [Çok Satırlı](#53-Çok-satırlı)
+- [Açgözlü vs Tembel Eşleştirme](#6-açgözlü-vs-tembel-eşleştirme)
 
 ## 1. Temel Eşleştiriciler
 
@@ -119,7 +124,7 @@ Meta karakterler aşağıdaki gibidir:
 
 |Meta karakter|Açıklama|
 |:----:|----|
-|.|Satır sonuç hariç herhangi bir karakterle eşleşir.|
+|.|Satır başlangıcı hariç herhangi bir karakterle eşleşir.|
 |[ ]|Köşeli parantezler arasında bulunan herhangi bir karakterle eşleşir.|
 |[^ ]|Köşeli parantez içerisinde yer alan `^` işaretinden sonra girilen karakterler haricindeki karakterlerle eşleşir.|
 |*|Kendisinden önce yazılan karakterin sıfır veya daha fazla tekrarı ile eşleşir.|
@@ -147,7 +152,7 @@ gelir.
 
 ## 2.2 Karakter Takımı
 
-Karakter takımları aryıca Karakter sınıfı olarak bilinir. Karakter takımlarını
+Karakter takımları ayrıca Karakter sınıfı olarak bilinir. Karakter takımlarını
 belirtmek için köşeli ayraçlar kullanılır. Karakterin aralığını belirtmek için
 bir karakter takımında tire kullanın. Köşeli parantezlerdeki karakter aralığının
 sıralaması önemli değildir.
@@ -266,7 +271,7 @@ Düzenli ifadelerde miktar belirliyiciler olarakda bilinen süslü parantezler, 
 karakterin veya karakter grubunun kaç defa tekrar edebileceğini belirtmek için
 kullanılırlar.
 
-Örneğin, `[0-9]{2,3}` ifadesinin anlamı: 0 ile 0 aralığındaki karakterlerden, en
+Örneğin, `[0-9]{2,3}` ifadesinin anlamı: 0 ile 9 aralığındaki karakterlerden, en
 az 2 en fazla 3 defa ile eşleş.
 
 <pre>
@@ -312,6 +317,21 @@ karakteri, ardından `a` karakteri, ardından `r` karakteri gelir.
 </pre>
 
 [Düzenli ifadeyi test edin](https://regex101.com/r/tUxrBG/1)
+
+Not olarak yakalanan gruplar yalnızca eşleşmez, ayrıca yakalanan karakterler ana dil içinde kullanılır.Bu ana dil Python,JavaScript ve neredeyse herhangi bir dilde düzenli ifadelerin fonksiyon tanımlamalarında olabilir.
+
+### 2.5.1 Karakter Grubu Olmayanlar
+
+Karakter grubu olmayan bir grup, karakterlerle eşleşen ancak grubu yakalayamayan bir yakalama grubudur. Karakter grubu olmayan bir grup parantez içinde`(...)` önce `?` ve ardından `:` ile gösterilir. Örneğin, `(?:c|g|p)ar` düzenli ifadesi, aynı karakterlerle eşleştiği ancak bir yakalama grubu oluşturmayacağı için `(c|g|p)ar` ifadesine benzer.
+
+<pre>
+"(?:c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
+</pre>
+
+[Düzenli ifadeyi test edin](https://regex101.com/r/Rm7Me8/1)
+
+Karakter grubu olmayanlar bul-ve-değiştir işlevselliğinde kullanıldığında veya karakter gruplarıyla karıştırıldığında, herhangi bir başka tür çıktı üretirken genel görünümü korumak için kullanışlı olabilir.
+Ayrıca bakınız [4. Bakınmak](#4-bakınmak).
 
 ## 2.6 Değişim
 
@@ -444,7 +464,7 @@ Düzenli ifadelerde kullanılan bakınma sembolleri aşadaki gibidir:
 |?=|Positive Lookahead (Verdiğimiz ifade sonrası arar ve `eşleşme varsa` sonuç döndürür.)|
 |?!|Negative Lookahead (Verdiğimiz ifade sonrası arar ve `eşleşme yoksa` sonuç döndürür.)|
 |?<=|Positive Lookbehind (Verdiğimiz ifade öncesini arar ve `eşleşme varsa` sonuç döndürür.)|
-|?<-!-|Negative Lookbehind Verdiğimiz ifade öncesini arar ve `eşleşme yoksa` sonuç döndürür.|
+|?<-!-|Negative Lookbehind (Verdiğimiz ifade öncesini arar ve `eşleşme yoksa` sonuç döndürür.)|
 
 ### 4.1 Positive Lookahead
 
@@ -589,6 +609,21 @@ eşleştirir.
 </pre>
 
 [Düzenli ifadeyi test edin](https://regex101.com/r/E88WE2/1)
+
+## 6. Açgözlü vs Tembel Eşleştirme
+
+Varsayılan olarak, bir düzenli ifade açgözlü bir eşleştirme yapacaktır, bu da eşleşmenin mümkün olduğu kadar çok olacağı anlamına gelir. Tembel bir şekilde eşleştirmek için `?` kullanabiliriz, bu da eşleşme olabildiğince kısa olacaktır.
+<pre>
+"/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. </pre>
+
+
+[Düzenli ifadeyi test edin](https://regex101.com/r/AyAdgJ/1)
+
+<pre>
+"/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat. </pre>
+
+
+[Düzenli ifadeyi test edin](https://regex101.com/r/AyAdgJ/2)
 
 ## Contribution
 

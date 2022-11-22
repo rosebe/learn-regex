@@ -31,8 +31,11 @@
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
 * [فارسی](../translations/README-fa.md)
+* [עברית](translations/README-he.md)
 
 ## 정규표현식이란 무엇인가?
+
+[![](https://img.shields.io/badge/-Download%20PDF%20-0a0a0a.svg?style=flat&colorA=0a0a0a)](https://gum.co/learn-regex)
 
 > 정규표현식은 텍스트에서 특정 패턴을 찾아내는데 사용되는 문자 혹은 기호들의 집합이다.
 
@@ -77,7 +80,7 @@
   - [대소문자 구분없음](#51-대소문자-구분없음)
   - [전체 검색](#52-전체-검색)
   - [멀티 라인](#53-멀티-라인)
-- [탐욕적 vs 게으른 매칭](#6-탐욕적-vs-게으른 매칭)
+- [탐욕적 vs 게으른 매칭](#6-탐욕적-vs-게으른-매칭)
 
 ## 1. 기본 매쳐
 

@@ -1,22 +1,14 @@
 <p align="center">
     <br/>
-    <a href="https://github.com/ziishaned/learn-regex">
+    <a href="https://github.com/ziishaned/learn-regex">	
         <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
     </a>
-    <br /><br />
-    <p>
-        <a href="https://twitter.com/ziishaned">
-            <img src="https://img.shields.io/twitter/follow/ziishaned.svg?style=social" />
-        </a>
-        <a href="https://github.com/ziishaned">
-            <img src="https://img.shields.io/github/followers/ziishaned.svg?label=Follow%20%40ziishaned&style=social" />
-        </a>
-    </p>
 </p>
 
 ## Translations:
 
 * [English](README.md)
+* [German](translations/README-de.md)
 * [Español](translations/README-es.md)
 * [Français](translations/README-fr.md)
 * [Português do Brasil](translations/README-pt_BR.md)
@@ -30,14 +22,22 @@
 * [Русский](translations/README-ru.md)
 * [Tiếng Việt](translations/README-vn.md)
 * [فارسی](translations/README-fa.md)
+* [עברית](translations/README-he.md)
 
-## What are Regular Expressions?
+
+## What is Regular Expression?
+
+<p>
+    <a href="https://gum.co/learn-regex">
+        <img src="https://img.shields.io/badge/-Download%20PDF%20-0a0a0a.svg?style=flat&colorA=0a0a0a" alt="Download PDF">
+    </a>
+</p>
 
 > A regular expression is a group of characters or symbols which is used to find a specific pattern in a text.
 
 A regular expression is a pattern that is matched against a subject string from
 left to right. Regular expressions are used to replace text within a string, 
-validating forms, extracting a substring from a string based on a pattern match, 
+validate forms, extract a substring from a string based on a pattern match, 
 and so much more. The term "regular expression" is a mouthful, so you will usually
 find the term abbreviated to "regex" or "regexp". 
 
@@ -60,7 +60,7 @@ letter and also it is too short.
 
 - [Basic Matchers](#1-basic-matchers)
 - [Meta Characters](#2-meta-characters)
-  - [The Full Stop](#21-the-full-stops)
+  - [The Full Stop](#21-the-full-stop)
   - [Character Sets](#22-character-sets)
     - [Negated Character Sets](#221-negated-character-sets)
   - [Repetitions](#23-repetitions)
@@ -234,7 +234,7 @@ clarified that`t` is the last `t` in the sentence.
 In regular expressions, the meta character `?` makes the preceding character
 optional. This symbol matches zero or one instance of the preceding character.
 For example, the regular expression `[T]?he` means: Optional uppercase
-`T`, followed by a lowercase `h`, followed bya lowercase `e`.
+`T`, followed by a lowercase `h`, followed by a lowercase `e`.
 
 <pre>
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
@@ -279,7 +279,7 @@ regular expression `[0-9]{3}` means: Match exactly 3 digits.
 
 ## 2.5 Capturing Groups
 
-A capturing group is a group of sub-patterns that is written inside parentheses 
+A capturing group is a group of subpatterns that is written inside parentheses 
 `(...)`. As discussed before, in regular expressions, if we put a quantifier 
 after a character then it will repeat the preceding character. But if we put a quantifier
 after a capturing group then it repeats the whole capturing group. For example,
@@ -355,7 +355,7 @@ character.
 
 In regular expressions, we use anchors to check if the matching symbol is the
 starting symbol or ending symbol of the input string. Anchors are of two types:
-The first type is the caret `^` that check if the matching character is the first
+The first type is the caret `^` that checks if the matching character is the first
 character of the input and the second type is the dollar sign `$` which checks if a matching
 character is the last character of the input string.
 
@@ -420,7 +420,7 @@ regular expressions:
 
 Lookbehinds and lookaheads (also called lookarounds) are specific types of
 ***non-capturing groups*** (used to match a pattern but without including it in the matching
-list). Lookarounds are used when we a pattern must be
+list). Lookarounds are used when a pattern must be
 preceded or followed by another pattern. For example, imagine we want to get all
 numbers that are preceded by the `$` character from the string
 `$4.44 and $10.88`. We will use the following regular expression `(?<=\$)[0-9\.]*`
