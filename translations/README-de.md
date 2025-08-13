@@ -8,7 +8,7 @@
 ## Translations:
 
 * [English](../README.md)
-* German
+* [German](../translations/README-de.md)
 * [Español](../translations/README-es.md)
 * [Français](../translations/README-fr.md)
 * [Português do Brasil](../translations/README-pt_BR.md)
@@ -21,7 +21,8 @@
 * [Polish](../translations/README-pl.md)
 * [Русский](../translations/README-ru.md)
 * [Tiếng Việt](../translations/README-vn.md)
-* [עברית](translations/README-he.md)
+* [فارسی](../translations/README-fa.md)
+* [עברית](../translations/README-he.md)
 
 ## Was sind Reguläre Ausdrücke?
 
@@ -38,7 +39,7 @@ kann. Wir möchten festlegen, dass der Benutzernamen Buchstaben, Ziffern, Unter-
 wir die Anzahl der Zeichen limitieren, damit der Name nicht unlesbar wird. Dazu verwenden wir den folgenden regulären Ausdruck:
 <br/><br/>
 <p align="center">
-  <img src="../img/regexp-en.png" alt="Regular expression">
+  <img src="../img/regexp-de.png" alt="Regular expression">
 </p>
 
 Der abgebildete reguläre Ausdruck erlaubt bspw. Die Eingaben `john_doe`, `jo-hn_doe` und `john12_as`. Die Eingabe `Jo` wird nicht akzeptiert, weil sie einen Großbuchstaben enthält und zu kurz ist.
